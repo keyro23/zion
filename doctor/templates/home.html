@@ -1,0 +1,426 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{{title}}</title>
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+</head>
+
+<style>
+{% block style %}{% endblock style %}
+</style>
+<body>
+
+  <div class="header" style="
+  background: rgb(187, 200, 177) url('../static/img/pt.jpg') no-repeat fixed center
+  {% if "appointment" in request.path %}
+  max-height:300px!important;min-height:300px!important;
+  {% endif %}
+  ">
+    
+    <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
+        <a class="nav-link active" href="{%url "zion" %}">
+        <div style="text-align: left;"> <img src="{% static "img/lg.png" %}"width="100" height="" alt="loading..." /></a></div>
+        <div class="container"><a class="navbar-brand" href="#">Appostle</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" href="#team">My Team</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" href="{%url 'blog' %}">Blog</a>
+                    </li>
+                    
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" href="#updates">Updates</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" href="#contact">Contact Us</a>
+                    </li>
+                    {% if request.user.is_superuser %}
+                    <li class="nav-item" role="presentation">
+                      <a class="nav-link active" href="{% url 'manage' %}">Manage</a>
+                  </li>
+                  {% endif %}
+                  <li class="nav-item" role="presentation">
+                    <a href="{% url 'manage' %}" style="float: left;cursor:pointer;" aria-expanded="true" title="You Have 6 New Appointments">
+                      <i class="far fa-bell" style="font-size: 20px; float: left; color: black">
+                      </i>
+                  </a>
+                  <span class="badge badge-danger">{{count}}</span>
+                </li>
+                  
+         
+                </ul>
+            </div>
+        </div>
+    </nav>
+     {% block content %}
+        
+        <body>
+
+
+         <div class="container mx-0 px-4 px-lg-5">
+            <!-- Heading Row-->
+            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+                <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" width="500" lenth="200" src="{% static "img/c.jpg" %}" alt="loading..." /></div>
+                <div class="col-lg-5">
+                    <h1 class="font-weight-light" align="rightr">  <font color="Deeppink"><strong>ZION WORSHIPPERS MINISTRY</strong></font> </h1>
+                    
+                    <p> For you to get more content about success and ways of life, KEYRO guarantees 100% help and way out of what you need right here in this platform. Checkout on your niche and make it .</p>
+                    <a class="btn btn-primary" href="{{'aboutus'}}">FIND NOW!</a>
+                </div>
+            </div>
+            </div>
+
+
+
+<div class="row my-4">
+  <div class="col-md-4">
+      <div class="text-center">
+        <div style="text-align: center;"><img src="{% static 'img/c.jpg' %}" width="200" height="" alt="loading..." /></div>
+        <p>Everyday is a new day. Every morning counts in the life of everybody but the counts are different. In KEYRO it counts 
+          as a new business day, financial freedom day, technology day. When you really unsderstand the measure of a heart of an enthusiastic entrepreneur then you got every morning right here. All we are saying is that get ready to start a new step in your life of financial freedom. RIGHT HERE!
+        </p>
+      </div>
+  </div>
+
+  
+
+  <div class="col-md-4">
+      <div class="text-center">
+        <div style="text-align: center;"><img src="{% static 'img/c.jpg' %}" width="200" height="" alt="loading..." /></div>
+        <p>All digital products are meant for efficiency. Do you really know what KEYRO offers as a digital product? We have courses for you, ebooks & website designing.
+          We just make that work easier for you. It's ready.Trust the process of acquring one right here! The first thing to do is go through all products in this platform and say "Yes! This is what i was looking for" and you got it just RIGHT HERE!
+        </p>
+      </div>
+  </div>
+
+
+  <div class="col-md-4">
+      <div class="text-center">
+        <div style="text-align: center;"><img src="{% static 'img/c.jpg' %}" width="200" height="" alt="loading..." /></div>
+        <p>Actually! Ebooks are all that can help your situations right now. What about clicking on the ebook button above and see this beautiful and content rich ebook that talks about that you dream about everyday.
+          In KEYRO it's a reality and we do all we can and filter the best for you , just for you. This is only for you . Grab it and grab this loving website. This will make you great moments. It's only RIGHT HERE!
+        </p>
+      </div>
+  </div>
+</div>
+
+
+
+
+            <!-- Call to Action-->
+            <div class="card text-white bg-secondary my-5 py-4 text-center">
+                <div class="card-body"><p class="text-white m-0">  <font color="Deeppink"><strong>For Your financial freedom KEYRO has got you covered. Explore this platform to make income instantly! </strong></font></p></div>
+            </div>
+   
+
+  <div class="header" style="
+  background: rgba(12, 12, 12) url('../static/img/gh.jpg') no-repeat fixed center
+  {% if "appointment" in request.path %}
+  max-height:300px!important;min-height:300px!important;
+  {% endif %}
+  ">
+    
+
+<div class="container" >
+        <div class="row" >
+            <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
+            	 <h1 align="center"><font color="Deeppink">VISION BEARER</font></h1>
+            	
+<div style="text-align: center;"><img src="{% static 'img/pst.jpg' %}" width="500" height="" alt="loading..." /></div>
+                <h1><strong><font color="blue">APPOSTLE NIMROD PASCAL</font></strong>
+                  <br> Exceptional Medical Care for All Ages.</h1>
+                <p> At our Medical Center
+                    we combine world class medicine
+                    with compassionate care. </p>
+                    <a href="{% url 'appointment' %}" class="btn btn-light btn-lg action-button" type="button"><font color="red"><strong>Book an appointment</font></strong></a>
+            </div>
+
+        </div>
+    </div>
+<hr>
+
+<h2 align="center" id="updates">
+   <font color="Deeppink"><strong> UPDATES</strong> </font>
+</h2>
+
+<hr>
+<div class="row gx-4 gx-lg-5">
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <div class="card-body">
+
+                            <h2 class="card-title"><strong>MEGA KESHA</strong></h2>
+                            <p class="card-text">WE welcome you to the Christ Mega Kesha with <h5><font color="red"> Appostle Nimrod Pascal</font></h5> On <strong>May 19th 2023  9pm to 6am</strong>. Venue will be at <strong>Heavens Gate Assembly Thika</strong>, Come and encounter Jesus to encounter your miracle. In Jesus Name</p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="card-title"><strong>FELLOWSHIP</strong></h2>
+                            <p class="card-text">We have Fellowships Every Saturday. In His Presence Men & Adullum Women Fellowship. This Fellowships are the building places of self strength in The work of the Lord. Join this Fellowships and have an active fellowship with fellow brethren.</p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="card-title"><strong>EVANGELISM</strong></h2>
+                            <p class="card-text">Join us Every Friday in a mission to soul winning. We are aiming at investing highly in the kingdom God for that is the work Jesus Christ left for us.</p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+<hr>
+
+
+
+
+
+
+
+<div class="header" style="
+  background: rgba(68, 65, 64) url('../static/img/gh.jpg') no-repeat fixed center
+  {% if "appointment" in request.path %}
+  max-height:300px!important;min-height:300px!important;
+  {% endif %}
+  ">
+
+
+ <div class="card text-white bg-secondary my-5 py-4 text-center">
+                <div class="card-body"><p class="text-white m-0">  <font color="blue"><strong>For Your financial freedom KEYRO has got you covered. Explore this platform to make income instantly! </strong></font></p></div>
+            </div>
+   
+<hr>
+
+
+
+<section class="container py-5"  style="margin-block:200px;" id="team">
+    <div class="row text-center ">
+        <div class="col-lg-8 mx-auto">
+            <h1>My Team</h1>
+            <p class="lead">Rely on established and competent professionals.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row text-center">
+
+            <!-- Team item -->
+            <div class="col-xl-3 col-sm-6 mb-5">
+                <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{% static 'img/team1.jpg' %}" alt="" class=" mh-100img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <h5 class="mb-0">Dr Nimrod</h5>
+                    <span class="small text-uppercase text-muted">Appostle</span>
+                </div>
+            </div><!-- End -->
+
+            <!-- Team item -->
+            <div class="col-xl-3 col-sm-6 mb-5">
+                <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{% static 'img/team2.jpg' %}" alt="" class=" mh-100 rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <h5 class="mb-0">Min Helly </h5>
+                    <span class="small text-uppercase text-muted">Worship Consultant</span>
+                </div>
+            </div><!-- End -->
+
+            <!-- Team item -->
+            <div class="col-xl-3 col-sm-6 mb-5">
+                <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{% static 'img/team3.jpg' %}" alt="" class=" mh-100img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <h5 class="mb-0">Dr Diana</h5>
+                    <span class="small text-uppercase text-muted">Healthcare</span>
+                </div>
+            </div><!-- End -->
+            <!-- Team item -->
+            <div class="col-xl-3 col-sm-6 mb-5">
+                <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{% static 'img/team4.jpg' %}" alt="" class=" mh-100img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <h5 class="mb-0">Dr Orupia</h5>
+                    <span class="small text-uppercase text-muted">God's search</span>
+                </div>
+            </div><!-- End -->
+        </div>
+    </div>
+</section><!-- End -->
+
+
+
+
+
+
+
+    <h1 align="center"><font color="red"> OUR MISSION </font></h1>
+   <h3 align="center"> hgdfegdrfgnhmjmhngfvdsa
+    <br>ergfthngtrfe
+    gtrfefrgnhgtredw
+    fgrfewqerfgthyghgrfedwf</h3>
+    <br>
+
+ 
+    <div style="text-align: center;"><img src="{% static 'img/service1.jpg' %}" width="500" height="" alt="loading..." /></div>
+
+<hr>
+
+    <h1 align="center"><font color="red"> OUR VISION </font></h1>
+   <h3 align="center"> hgdfegdrfgnhmjmhngfvdsa
+    <br>ergfthngtrfe
+    gtrfefrgnhgtredw
+    fgrfewqerfgthyghgrfedwf</h3>
+    <br>
+
+ 
+    <div style="text-align: center;"><img src="{% static 'img/service1.jpg' %}" width="500" height="" alt="loading..." /></div>
+
+<hr>
+
+<br>
+
+    <h1 align="center"><font color="red"> #LOGO </font></h1>
+   <h3 align="center"> hgdfegdrfgnhmjmhngfvdsa
+    <br>ergfthngtrfe
+    gtrfefrgnhgtredw
+    fgrfewqerfgthyghgrfedwf</h3>
+    <br>
+
+ 
+    <div style="text-align: center;"><img src="{% static 'img/service1.jpg' %}" width="500" height="" alt="loading..." /></div>
+
+
+
+<hr>
+
+
+<section id="services">
+  <div class="bg-primary text-center py-5 mb-4">
+      <div class="container">
+        <h1 class="fw-light text-white">Services</h1>
+        <p class="overview">We provide compassionate and expert care to our community. You are at the center of everything we do. Let us be your healthcare partner.</p>
+      </div>
+    </div>
+  <div class="container">
+    <div class="row">
+      <!-- Team Member 1 -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <img src="{% static 'img/service1.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0"><strong>GLORIOUS MONDAY</strong></h5>
+            <div class="card-text text-black-50">This is the day to withness the glory of God.</div>
+          </div>
+        </div>
+      </div>
+      <!-- Team Member 2 -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <img src="{% static 'img/service2.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h6 class="card-title mb-0"><strong>ZEALOUS WEDNESDAY</strong></h6>
+            <div class="card-text text-black-50">How much are you sacrificing for God's work?.</div>
+          </div>
+        </div>
+      </div>
+      <!-- Team Member 3 -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <img src="{% static 'img/service3.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h6 class="card-title mb-0"><strong>SOUL WINNING FRIDAY</strong></h6>
+            <div class="card-text text-black-50">Did yu know  the best way to encounter the Lord?</div>
+          </div>
+        </div>
+      </div>
+      <!-- Team Member 4 -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <img src="{% static 'img/service4.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0"><strong>GRACIOUS SUNDAY</strong></h5>
+            <div class="card-text text-black-50">Gods' grace is sufficeint, Meet the grace overflow.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   {% block cta %}{% endblock cta %}
+
+
+
+{% endblock content %}
+
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+  
+ <script>
+    {% block script %}{% endblock script %}
+ </script>
+</body>
+
+<hr>
+
+</html>
+   <div class="row">
+          <div class="col-sm-6">
+            <div class="contact-map">
+              <iframe src="https://www.google.com/maps/embed/v1/place?q=New+York+University&amp;key=AIzaSyBSFRN6WWGYwmFi498qXXsD2UwkbmD74v4" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width: 100%; height: 360px;"></iframe>
+            </div>
+          </div><!-- end col -->
+  
+          <!-- Contact form -->
+          <div class="col-sm-6">
+            <form role="form" name="ajax-form" id="ajax-form" method="post" class="form-main" action="{% url 'home' %}">
+            {% csrf_token %}
+              <div class="form-group">
+                <label for="name2"><font color="red"> Name </font></label>
+                <input class="form-control" id="name2" name="name" type="text" placeholder="name">
+                <div class="error" id="err-name" style="display: none;">Please enter name </font>font></div>
+              </div> <!-- /Form-name -->
+  
+              <div class="form-group">
+                <label for="email2"><font color="red">Email</font></label>
+                <input class="form-control" id="email2" name="email" type="text" placeholder="email">
+                <div class="error" id="err-emailvld" style="display: none;">E-mail is not a valid format</div> 
+              </div> <!-- /Form-email -->
+  
+              <div class="form-group">
+                <label for="message2"><font color="red">Message</font></label>
+                <textarea class="form-control" id="message2" name="message" rows="5" placeholder="message">Message</textarea>
+  
+                <div class="error" id="err-message" style="display: none;">Please enter message</div>
+              </div> <!-- /col -->
+  
+              <div class="row">            
+                  <button type="submit" class="btn btn-primary btn-shadow btn-rounded w-md" id="send">Send</button>
+                </div> <!-- /col -->
+              </div> <!-- /row -->
+  
+            </form> <!-- /form -->
+          </div> <!-- end col -->
+  
+        </div> <!-- end row -->
+            
+      </div>
+</section>
+
